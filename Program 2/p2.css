@@ -1,0 +1,17 @@
+body{
+    background-color: antiquewhite;
+    
+}
+h1{
+    color: blueviolet;
+    font-style: oblique;
+}
+header{
+    color: rgb(2, 83, 83);
+    font-style: inherit;
+}
+p{
+    color: #490af7;
+    font-style: italic;
+    font-size: larger;
+}
