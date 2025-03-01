@@ -7,11 +7,15 @@
         <script>
             function validateform(){
                 var firstname = document.getElementById("UserName").value; 
-                var fnpattern=/^[a-zA-Z]{6,15}$/;
-                if(firstname.length < 6 || !firstname.match(fnpattern)){
-                    alert("First name should be minimum 6 characters length and should not contain any numbers or special characters.");
+                var fnpattern=/^[a-zA-Z]$/;
+                if(firstname.length < 6 ){
+                    alert("First name should be minimum 6 Charaters length");
                     return false;
                 }
+                if(!firstname.match(fnpattern)){
+                    alert("First name should not contain any numbers or special characters.");
+                    return false;
+                    }
 
                 var lastname = document.getElementById("Last Name").value; 
                 if(lastname.length < 10){
