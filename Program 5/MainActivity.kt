@@ -1,27 +1,18 @@
-package com.example.calculator
-
+package com.example.simplecalc
 import android.app.Activity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
-
+import com.example.simplecalc.R
 class MainActivity : Activity() {
-
-    private lateinit var display: TextView  // Use 'lateinit' for non-nullable TextView
-
+    private lateinit var display: TextView
     private var currentInput = ""
     private var operator = ""
     private var firstOperand = 0.0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)  // Link the layout file
-
-        // Initialize the TextView
+        setContentView(R.layout.activity_main)
         display = findViewById(R.id.display)
-
-        // Set up number buttons
         setUpNumberButton(R.id.button0, "0")
         setUpNumberButton(R.id.button1, "1")
         setUpNumberButton(R.id.button2, "2")
@@ -32,14 +23,10 @@ class MainActivity : Activity() {
         setUpNumberButton(R.id.button7, "7")
         setUpNumberButton(R.id.button8, "8")
         setUpNumberButton(R.id.button9, "9")
-
-        // Set up operator buttons
         setUpOperatorButton(R.id.buttonAdd, "+")
         setUpOperatorButton(R.id.buttonSubtract, "-")
         setUpOperatorButton(R.id.buttonMultiply, "*")
         setUpOperatorButton(R.id.buttonDivide, "/")
-
-        // Set up equals button
         val equalsButton: Button = findViewById(R.id.buttonEquals)
         equalsButton.setOnClickListener {
             if (currentInput.isNotEmpty()) {
@@ -49,8 +36,6 @@ class MainActivity : Activity() {
                 currentInput = result.toString()
             }
         }
-
-        // Set up clear button
         val clearButton: Button = findViewById(R.id.buttonClear)
         clearButton.setOnClickListener {
             currentInput = ""
@@ -59,7 +44,6 @@ class MainActivity : Activity() {
             display.text = "0"
         }
     }
-
     private fun setUpNumberButton(buttonId: Int, number: String) {
         val button: Button = findViewById(buttonId)
         button.setOnClickListener {
